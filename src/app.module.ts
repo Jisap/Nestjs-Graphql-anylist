@@ -56,11 +56,11 @@ import { ListItemModule } from './list-item/list-item.module';
     
     TypeOrmModule.forRoot({    // Para la integración con bases de datos SQL y NoSQL, Nest proporciona el @nestjs/typeorm paquete
       type: 'postgres',        // typeOrm permite la interacción entre nuestras entitys y nuestra base de datos
-      ssl: ( process.env.STATE === 'prod' )
-        ? { rejectUnauthorized: false,
-            sslmode: 'require'
-          }
-        : false as any,
+      // ssl: ( process.env.STATE === 'prod' )
+      //   ? { rejectUnauthorized: false,
+      //       sslmode: 'require'
+      //     }
+      //   : false as any,
       host: process.env.DB_HOST,
       port: +process.env.DB_PORT,
       username: process.env.DB_USERNAME,
@@ -90,13 +90,13 @@ import { ListItemModule } from './list-item/list-item.module';
 })
 export class AppModule {
 
-  constructor(){
-    console.log("Control de variables")
-    console.log("STATE", process.env.STATE)
-    console.log("host", process.env.DB_HOST)
-    console.log("port", +process.env.DB_PORT)
-    console.log("username", process.env.DB_USERNAME)
-    console.log("password", process.env.DB_PASSWORD)
-    console.log("database", process.env.DB_NAME)
-  }
+  // constructor(){
+  //   console.log("Control de variables")
+  //   console.log("STATE", process.env.STATE)
+  //   console.log("host", process.env.DB_HOST)
+  //   console.log("port", +process.env.DB_PORT)
+  //   console.log("username", process.env.DB_USERNAME)
+  //   console.log("password", process.env.DB_PASSWORD)
+  //   console.log("database", process.env.DB_NAME)
+  // }
 }
